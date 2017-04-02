@@ -6,6 +6,8 @@ import config from './config'
 
 import Boot from './states/Boot'
 import Preloader from './states/Preloader'
+import Start from './states/Start'
+
 // import BootState from './states/Boot'
 // import SplashState from './states/Splash'
 // import GameState from './states/Game'
@@ -34,8 +36,12 @@ class Game extends Phaser.Game {
     constructor() {
         super(config.GAME_WIDTH, config.GAME_HIGHT, Phaser.AUTO,'game')
 
+        // Shared states accross progam...
+        this.currentStage = null
+
         this.state.add('Boot', Boot)
         this.state.add('Preloader', Preloader)
+        this.state.add('Start', Start)
 
         this.state.start('Boot')
     }

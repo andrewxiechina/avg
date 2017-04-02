@@ -46,7 +46,9 @@ export default class extends Phaser.State {
   }
 
   create() {
-    this.state.start('Preloader')
+      // currentState is shared accross states and will be used to get data
+      this.game.currentStage = 'start'
+     this.state.start('Preloader')
 
   }
 }
