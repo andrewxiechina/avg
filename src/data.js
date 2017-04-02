@@ -7,6 +7,9 @@ export default {
             spritesheets: [
                 ['button.png', 337, 61]
             ]
-        }
+        },
+    },
+    main: {
+        preload:{}
     }
 }
