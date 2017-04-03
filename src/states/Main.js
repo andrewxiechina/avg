@@ -9,6 +9,7 @@ export default class extends Phaser.State {
     create() {
         let ref = data.main.content[0]
         this.addBackground(ref.bg)
+        this.addFigure(ref.figure)
         this.addTextFrame(ref.textFrame)
         this.status.tweens[0].start()
     }
@@ -19,6 +20,17 @@ export default class extends Phaser.State {
         }
         this.background = this.add.sprite(0,0,asset)
         this.background.alpha = 0
+        let tween = this.add.tween(this.background).to({alpha: 1}, 1000, Phaser.Easing.Bounce.in)
+        // TODO: Need to rethink the logic of tweens.
+        this.status.tweens = []
+        this.status.tweens.push(tween)
+    }
+    addFigure(asset){
+        if(this.figure){
+            this.figure.kill()
+        }
+        this.figure = this.add.sprite(0,0,asset)
+        this.figure.alpha = 0
         let tween = this.add.tween(this.background).to({alpha: 1}, 1000, Phaser.Easing.Bounce.in)
         // TODO: Need to rethink the logic of tweens.
         this.status.tweens = []

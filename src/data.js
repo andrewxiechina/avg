@@ -14,13 +14,15 @@ export default {
             images: [
                 'bg1_morning.png',
                 'bg1_evening.png',
-                'text_frame.png'
+                'text_frame.png',
+                'girl.png'
             ]
         },
         content: [
             {
                 bg: 'bg1_morning',
-                textFrame: 'text_frame'
+                textFrame: 'text_frame',
+                figure: 'girl'
             }
         ]
     }
