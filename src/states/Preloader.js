@@ -10,10 +10,6 @@ export default class extends Phaser.State {
 
         this.load.setPreloadSprite(this.loaderBar);
 
-        if(!data[this.game.currentStage].preload)
-        {
-            this.create()
-        }
         let images = data[this.game.currentStage].preload.images
         if(images) {
             images.forEach(file => {
@@ -32,10 +28,7 @@ export default class extends Phaser.State {
         }
     }
     create() {
-
-        if(this.game.currentStage == 'start') {
-            this.state.start('Start')
-        }
+        // Router
         switch (this.game.currentStage) {
             case 'start':
                 this.state.start('Start')

@@ -10,6 +10,16 @@ export default {
         },
     },
     main: {
-        preload:{}
+        preload:{
+            images: [
+                'bg1_morning.png',
+                'bg1_evening.png',
+            ]
+        },
+        content: [
+            {
+                bg: 'bg1_morning'
+            }
+        ]
     }
 }
